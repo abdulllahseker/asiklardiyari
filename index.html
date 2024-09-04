@@ -8,23 +8,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="music/careless-whisper.mp3" type="audio/mpeg">
-        Tarayıcınız bu sesi desteklemiyor.
-    </audio>
+    <!-- Açılış Ekranı -->
+    <div class="intro-screen">
+        <h1>Hoşgeldin Fıstık!</h1>
+        <p>Bak ne göstereceğim...</p>
+        <button id="show-content-btn">Görmen İstiyor Musun? O halde buraya tıkla</button>
+    </div>
 
+    <!-- Arka Plan ve Ana İçerik -->
     <div class="background-blur"></div>
-
     <div class="background-images-wrapper">
         <div class="background-images"></div>
     </div>
-
     <h1 class="rgb-text">Seni Seviyorum Papatyam</h1>
-
     <div class="fireworks"></div>
     <div class="hearts"></div>
 
+    <!-- JavaScript -->
     <script>
+        // Açılış ekranını kapatmak ve müziği başlatmak için butonun işlevselliği
+        const introScreen = document.querySelector('.intro-screen');
+        const showContentBtn = document.getElementById('show-content-btn');
+
+        showContentBtn.addEventListener('click', () => {
+            introScreen.style.opacity = '0';
+            introScreen.style.pointerEvents = 'none';
+            document.body.style.overflow = 'auto';
+
+            // Müziği başlat
+            const audio = new Audio('music/careless-whisper.mp3');
+            audio.loop = true;
+            audio.play();
+        });
+
+        // Kalp ve havai fişek animasyonları
         const heartCount = 20;
         for (let i = 0; i < heartCount; i++) {
             let heart = document.createElement('div');
