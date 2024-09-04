@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D RGB Text with Rotating Background</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="music/careless-whisper.mp3" type="audio/mpeg">
+        Tarayıcınız bu sesi desteklemiyor.
+    </audio>
+
+    <div class="background-blur"></div>
+
+    <div class="background-images-wrapper">
+        <div class="background-images"></div>
+    </div>
+
+    <h1 class="rgb-text">Seni Seviyorum Papatyam</h1>
+
+    <div class="fireworks"></div>
+    <div class="hearts"></div>
+
+    <script>
+        const heartCount = 20;
+        for (let i = 0; i < heartCount; i++) {
+            let heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 100 + 'vh';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.querySelector('.hearts').appendChild(heart);
+        }
+
+        const fireworksCount = 30;
+        for (let i = 0; i < fireworksCount; i++) {
+            let firework = document.createElement('div');
+            firework.classList.add('firework');
+            firework.style.left = Math.random() * 100 + 'vw';
+            firework.style.top = Math.random() * 100 + 'vh';
+            firework.style.animationDuration = Math.random() * 2 + 1 + 's';
+            firework.style.animationDelay = Math.random() * 5 + 's';
+            document.querySelector('.fireworks').appendChild(firework);
+        }
+    </script>
+</body>
+</html>

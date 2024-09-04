@@ -1,0 +1,146 @@
+body {
+    /* Arka plan gradient ve stil */
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Raleway', sans-serif;
+    cursor: url('path/to/custom-cursor.png'), auto; /* Özel cursor */
+}
+
+/* Neon RGB Metin Efekti */
+.rgb-text {
+    font-size: 60px;
+    font-family: 'Pacifico', cursive;
+    color: #ffffff;
+    text-shadow: 
+        0 0 5px #ff0000, 
+        0 0 15px #00ff00, 
+        0 0 25px #0000ff;
+    animation: rgb 5s infinite alternate, text-appear 1s ease-in-out forwards;
+    position: relative;
+    margin-top: 50px;
+    z-index: 2;
+    text-align: center;
+    user-select: none; /* Metin seçimini engelle */
+    cursor: pointer; /* Hover'da pointer işareti */
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .rgb-text {
+        font-size: 40px;
+        margin-top: 20px;
+    }
+}
+
+/* Arka Plan Blur ve Görüntü Efekti */
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/wp_image.jpeg') center center no-repeat;
+    background-size: cover;
+    filter: blur(15px);
+    z-index: 0;
+    opacity: 0.8; /* Transparanlık eklendi */
+}
+
+/* Arka Plan Görüntüleri ve Efektleri */
+.background-images-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 60vh;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); /* Gölge efekti */
+}
+
+.background-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: rotateBackground 30s infinite linear;
+    opacity: 0.9; /* Hafif transparanlık */
+}
+
+/* Arka Plan Döndürme Animasyonu */
+@keyframes rotateBackground {
+    0% { background-image: url('images/wp_image.jpeg'); }
+    20% { background-image: url('images/wp_image1.jpeg'); }
+    40% { background-image: url('images/wp_image2.jpeg'); }
+    60% { background-image: url('images/wp_image3.jpeg'); }
+    80% { background-image: url('images/wp_image4.jpeg'); }
+    100% { background-image: url('images/wp_image5.jpeg'); }
+}
+
+/* RGB Animasyonu */
+@keyframes rgb {
+    0%, 100% { color: #ff0000; }
+    33% { color: #00ff00; }
+    66% { color: #0000ff; }
+}
+
+/* Metin Görünme Efekti */
+@keyframes text-appear {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Kalp ve Havai Fişek Animasyonları */
+.heart, .firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.heart {
+    background: linear-gradient(45deg, #ff6b6b, #ffcccb);
+    transform: rotate(-45deg);
+    animation: float 6s infinite;
+    opacity: 0.7;
+}
+
+.heart:before, .heart:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+}
+
+.heart:before { top: -5px; left: 0; }
+.heart:after { left: 5px; top: 0; }
+
+.firework {
+    background-color: rgba(255, 255, 255, 0.8);
+    animation: firework 1s ease-in-out forwards;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(-45deg); opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-1000px) rotate(-45deg); opacity: 0; }
+}
+
+@keyframes firework {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
