@@ -144,3 +144,49 @@ body {
     0% { transform: scale(0); opacity: 1; }
     100% { transform: scale(3); opacity: 0; }
 }
+
+/* Açılış Ekranı Stil */
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Yumuşak arka plan */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    z-index: 10; /* Diğer içeriklerin üstünde olacak şekilde */
+    opacity: 1;
+    transition: opacity 1s ease;
+    pointer-events: all;
+}
+
+.intro-screen h1 {
+    font-size: 3rem;
+    font-family: 'Pacifico', cursive;
+    margin: 0;
+}
+
+.intro-screen p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.intro-screen button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.intro-screen button:hover {
+    background: #e0e0e0;
+}
